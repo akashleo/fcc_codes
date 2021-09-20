@@ -8,8 +8,12 @@ class MyComponent extends React.Component {
     this.handleKeyPress = this.handleKeyPress.bind(this);
   }
   // Change code below this line
-  componentDidMount() {}
-  componentWillUnmount() {}
+  componentDidMount() {
+    document.addEventListener("keydown", this.handleKeyPress);
+  }
+  componentWillUnmount() {
+    document.removeEventListener("keydown", this.handleKeyPress);
+  }
   // Change code above this line
   handleEnter() {
     this.setState((state) => ({
